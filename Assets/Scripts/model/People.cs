@@ -1,9 +1,12 @@
 using System.Collections.Generic;
+using System.Xml.Serialization;
 
+[XmlRoot("people")]
 public class People
 {
     List<Person> person;
 
+    [XmlElement("person")]
     public List<Person> Person
     {
         get

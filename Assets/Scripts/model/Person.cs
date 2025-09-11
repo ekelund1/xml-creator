@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Xml.Serialization;
 
 public class Person
 {
@@ -8,9 +9,16 @@ public class Person
     List<Family> family;
     Phone phone;
 
+    [XmlElement("firstname")]
     public string FirstName { get => firstName; set => firstName = value; }
+
+    [XmlElement("lastname")]
     public string LastName { get => lastName; set => lastName = value; }
+
+    [XmlElement("address")]
     public Address Address { get => address; set => address = value; }
+
+    [XmlElement("family")]
     public List<Family> Family
     {
         get
