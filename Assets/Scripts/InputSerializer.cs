@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 namespace SofthouseXML
 {
@@ -24,7 +25,7 @@ namespace SofthouseXML
                         var person = PersonMapper.SerializePerson(row);
                         personParent = person;
                         familyParent = null;
-                        people.PersonList.Add(person);
+                        people.Person.Add(person);
                         break;
 
                     case 'T':
@@ -46,7 +47,7 @@ namespace SofthouseXML
                         else
                             throw new Exception("Attempted to attach Address without any parent.");
                         break;
-                        
+
                     case 'F':
                         var family = FamilyMapper.SerializeFamily(row);
                         if (personParent == null)
@@ -54,6 +55,10 @@ namespace SofthouseXML
 
                         personParent.Family.Add(family);
                         familyParent = family;
+                        break;
+
+                    default:
+                        Debug.Log($"No operation exists for case: '{firstLetter}'.");
                         break;
                 }
             }

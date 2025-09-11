@@ -19,7 +19,7 @@ public class Serializer
 
         var result = serializer.ParseInput(input);
 
-        Assert.AreEqual(2, result.PersonList.Count);
+        Assert.AreEqual(2, result.Person.Count);
     }
 
     [Test]
@@ -77,9 +77,9 @@ public class Serializer
 
         var peopleResult = serializer.ParseInput(input);
 
-        Assert.AreEqual(1, peopleResult.PersonList.Count);
+        Assert.AreEqual(1, peopleResult.Person.Count);
 
-        Person person = peopleResult.PersonList[0];
+        Person person = peopleResult.Person[0];
         Assert.AreEqual("förnamn", person.FirstName);
         Assert.AreEqual("efternamn", person.LastName);
 

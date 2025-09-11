@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using SofthouseXML;
+using UnityEngine;
 
 public class PersonMapper
 {
@@ -24,6 +24,8 @@ public class PersonMapper
         {
             person.LastName = split.ElementAtOrDefault(2);
         }
+
+        Debug.Log($"PersonMapper created new Person");
 
         return person;
     }

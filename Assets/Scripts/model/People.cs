@@ -2,7 +2,18 @@ using System.Collections.Generic;
 
 public class People
 {
-    List<Person> personList = new List<Person>();
+    List<Person> person;
 
-    public List<Person> PersonList { get => personList; set => personList = value; }
+    public List<Person> Person
+    {
+        get
+        {
+            if (person == null)
+            {
+                person = new List<Person>();
+            }
+            return person;
+        }
+        set => person = value;
+    }
 }
